@@ -156,6 +156,36 @@
 
 
 
+
+                    <li>
+                        <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
+                            <i class="fab fa-laravel"></i>
+                            <span class="nav-link-text">{{ __('NEWS') }}</span>
+                            <b class="caret mt-1"></b>
+                        </a>
+
+                        <div class="collapse show" id="laravel-examples">
+                            <ul class="nav pl-4">
+                                <li>
+
+
+                                    <a href="{{ route('news.index')  }}">
+                                        <i class="tim-icons icon-single-02"></i>
+                                        <p>{{ _('NEWS') }}</p>
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <a href="{{ route('news.create')  }}">
+                                        <i class="tim-icons icon-bullet-list-67"></i>
+                                        <p>{{ _('CREATE NEWS') }}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
                 </ul>
             </div>
         </div>
