@@ -27,7 +27,13 @@ Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 Route::get('/add', [UserController::class, 'add'])->name('users.add');
+Route::get('/edit/{id}', [UserController::class, 'editUser'])->name('users.edit');
 Route::post('/add', [UserController::class, 'addUser'])->name('users.create');
+Route::put('/update/{id}', [UserController::class, 'updateUser'])->name('users.update');
+Route::post('/delete/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
+
+
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
