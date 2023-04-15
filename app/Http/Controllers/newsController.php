@@ -12,7 +12,7 @@ class newsController extends Controller
 {
     public function index()
     {
-        $data = DB::table('news')->where('created_by', '=', auth()->user()->name)->get();
+        $data = DB::table('news')->where('created_by', auth()->user()->name)->get();
         return view('news.index', ['data' => $data]);
     }
 
@@ -32,13 +32,13 @@ class newsController extends Controller
 
     public function show(int $id)
     {
-        $data = DB::table('news')->where('id', '=', $id)->first();
+        $data = DB::table('news')->where('id', $id)->first();
         return view('news.show', ['data' => $data]);
     }
 
     public function update(int $id)
     {
-        $data = DB::table('news')->where('id', '=', $id)->first();
+        $data = DB::table('news')->where('id', $id)->first();
         return view('news.update', ['data' => $data]);
     }
 
@@ -51,7 +51,7 @@ class newsController extends Controller
         }
         $newPhoto = $request->photo->store('newsImages');
 
-        DB::table('news')->where('id', '=', $id)->update([
+        DB::table('news')->where('id', $id)->update([
             'title' => $request['title'],
             'author' => $request['author'],
             'content' => $request['content'],

@@ -8,7 +8,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ __('White Dashboard Laravel by Creative Tim & UPDIVISION') }}</title>
+    <title>{{ env('APP_NAME') }}</title>
     <!-- Favicon -->
 
     <!-- Extra details for Live View on GitHub Pages -->
@@ -116,20 +116,20 @@
         <div class="sidebar">
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="#" class="simple-text logo-mini">{{ _('WD') }}</a>
-                    <a href="#" class="simple-text logo-normal">{{ _('White Dashboard') }}</a>
+                    <a href="#" class="simple-text logo-mini">{{ _('DX') }}</a>
+                    <a href="#" class="simple-text logo-normal">{{ _('DIX - CRUD') }}</a>
                 </div>
                 <ul class="nav">
                     <li>
                         <a href="{{ route('home') }}">
                             <i class="tim-icons icon-chart-pie-36"></i>
-                            <p>{{ _('Dashboard') }}</p>
+                            <p>{{ _('HOME') }}</p>
                         </a>
                     </li>
                     <li>
                         <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
                             <i class="fab fa-laravel"></i>
-                            <span class="nav-link-text">{{ __('Laravel Examples') }}</span>
+                            <span class="nav-link-text">{{ __('Users') }}</span>
                             <b class="caret mt-1"></b>
                         </a>
 

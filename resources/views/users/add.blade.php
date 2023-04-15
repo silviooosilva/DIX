@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('User Profile'), 'pageSlug' => 'profile'])
+@extends('layouts.app', ['page' => __('Users'), 'pageSlug' => 'users_add'])
 
 @section('content')
 
@@ -29,7 +29,7 @@
 
                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                         <label>{{ _('Password') }}</label>
-                        <input type="password" name="password" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ _('Email address') }}" value="{{ old('password') }}">
+                        <input type="password" name="password" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ _('Password') }}" value="{{ old('password') }}">
                         @include('alerts.feedback', ['field' => 'password'])
                     </div>
                 </div>

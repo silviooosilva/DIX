@@ -26,11 +26,14 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
-Route::get('/add', [UserController::class, 'add'])->name('users.add');
-Route::get('/edit/{id}', [UserController::class, 'editUser'])->name('users.edit');
-Route::post('/add', [UserController::class, 'addUser'])->name('users.create');
-Route::put('/update/{id}', [UserController::class, 'updateUser'])->name('users.update');
-Route::post('/delete/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
+
+Route::prefix('/users')->group(function () {
+    Route::view('/', 'users.add')->name('users.add');
+    Route::get('/edit/{id}', [UserController::class, 'editUser'])->name('users.edit');
+    Route::post('/add', [UserController::class, 'addUser'])->name('users.create');
+    Route::put('/update/{id}', [UserController::class, 'updateUser'])->name('users.update');
+    Route::post('/delete/{id}', [UserController::class, 'deleteUser'])->name('users.delete');
+});
 
 
 

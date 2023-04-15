@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => __('User Profile'), 'pageSlug' => 'updateNews'])
+@extends('layouts.app', ['page' => __('Update news'), 'pageSlug' => 'updateNews'])
 
 @section('content')
 
